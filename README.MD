@@ -125,12 +125,45 @@ graph TD
 - Modela componentes, contenedores y relaciones en sistemas distribuidos o microservicios.
 
 ```mermaid
-C4Component
-Container_Boundary(c1, "Customer Service") {
-    Component(c2, "API", "REST API")
-    Component(c3, "Database", "MySQL")
-}
-c2 --> c3 : Reads/Writes Data
+flowchart TB
+
+    subgraph personalBankingCustomer[Personal Banking Customer]
+        h1[-Person-]:::type
+        d1[A customer of the bank, with \n personal bank accounts]:::description
+    end
+    personalBankingCustomer:::person
+
+    subgraph internetBankingSystem[Internet Banking System]
+        h2[-Software System-]:::type
+        d2[Allows customers to view \n information about their bank \n banks, and make payments]:::description
+    end
+    internetBankingSystem:::internalSystem
+
+    subgraph mainframeBankingSystem[Mainfram Banking System]
+        h3[-Software System-]:::type
+        d3[Stores all of the core banking \n information about customers, \n accounts, transactions etc]:::description
+    end
+    mainframeBankingSystem:::externalSystem
+
+    subgraph emailSystem[Email System]
+        h4[-Software System-]:::type
+        d4[The internal Microsoft Exchange \n email system]:::description
+    end
+    emailSystem:::externalSystem
+
+    personalBankingCustomer--Views account \n balances, and \n makes payments \n using-->internetBankingSystem
+    internetBankingSystem--Gets accounts \n information from, \n and makes \n payments using-->mainframeBankingSystem
+    internetBankingSystem--Sends emails using--> emailSystem
+    emailSystem--Sends emails to-->personalBankingCustomer
+
+%% Element type definitions
+
+    classDef person fill:#08427b
+    classDef internalSystem fill:#1168bd
+    classDef externalSystem fill:#999999
+
+    classDef type stroke-width:0px, color:#fff, fill:transparent, font-size:12px
+    classDef description stroke-width:0px, color:#fff, fill:transparent, font-size:13px
 ```
 
 ### 12. **Diagramas de Tubería (Pipeline Diagrams)**
@@ -185,16 +218,21 @@ stateDiagram-v2
 - Representa las relaciones entre requisitos y los elementos que los cumplen.
 
 ```mermaid
-requirementDiagram
-    requirement R1 {
+    requirementDiagram
+
+    requirement test_req {
         id: 1
-        text: "El sistema debe permitir a los usuarios autenticarse"
+        text: the test text.
+        risk: high
+        verifymethod: test
     }
-    testCase T1 {
-        id: 101
-        description: "Verificar autenticación correcta"
+
+    element test_entity {
+        type: simulation
     }
-    R1 -- T1
+
+    test_entity - satisfies -> test_req
+
 ```
 
 ### 17. **Diagramas de Arquitectura de Software (C4: Container & Component Diagrams)**
