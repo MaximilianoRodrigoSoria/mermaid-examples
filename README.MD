@@ -244,5 +244,5 @@ graph TD
         c2["API\nREST API\nManeja solicitudes de clientes"]
         c3["Database\nMySQL\nAlmacena información"]
     end
-    c2 --> c3:\"Operaciones%.20CRUD\"
+    c2 --> c4["Customer\nCustomer.java\nRepresenta un cliente"]
 ```
