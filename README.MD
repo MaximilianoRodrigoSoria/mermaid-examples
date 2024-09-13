@@ -200,9 +200,11 @@ requirementDiagram
 ### 17. **Diagramas de Arquitectura de Software (C4: Container & Component Diagrams)**
 - Se centra en la arquitectura de un sistema, modelando los componentes y contenedores.
 
+```mermaid
 graph TD
-subgraph Customer_Service["Customer Service"]
-c2["API\nREST API\nManeja solicitudes de clientes"]
-c3["Database\nMySQL\nAlmacena información"]
-end
-c2 --> c3 : Operaciones CRUD
+    subgraph "Customer Service"
+        c2["API\nREST API\nManeja solicitudes de clientes"]
+        c3["Database\nMySQL\nAlmacena información"]
+    end
+    c2 --> c3 : "Operaciones CRUD"
+```
