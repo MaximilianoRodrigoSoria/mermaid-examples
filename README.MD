@@ -129,30 +129,30 @@ flowchart TB
 
     subgraph personalBankingCustomer[Personal Banking Customer]
         h1[-Person-]:::type
-        d1[A customer of the bank, with \n personal bank accounts]:::description
+        d1[A customer of the bank, with   personal bank accounts]:::description
     end
     personalBankingCustomer:::person
 
     subgraph internetBankingSystem[Internet Banking System]
         h2[-Software System-]:::type
-        d2[Allows customers to view \n information about their bank \n banks, and make payments]:::description
+        d2[Allows customers to view   information about their bank   banks, and make payments]:::description
     end
     internetBankingSystem:::internalSystem
 
     subgraph mainframeBankingSystem[Mainfram Banking System]
         h3[-Software System-]:::type
-        d3[Stores all of the core banking \n information about customers, \n accounts, transactions etc]:::description
+        d3[Stores all of the core banking   information about customers,   accounts, transactions etc]:::description
     end
     mainframeBankingSystem:::externalSystem
 
     subgraph emailSystem[Email System]
         h4[-Software System-]:::type
-        d4[The internal Microsoft Exchange \n email system]:::description
+        d4[The internal Microsoft Exchange   email system]:::description
     end
     emailSystem:::externalSystem
 
-    personalBankingCustomer--Views account \n balances, and \n makes payments \n using-->internetBankingSystem
-    internetBankingSystem--Gets accounts \n information from, \n and makes \n payments using-->mainframeBankingSystem
+    personalBankingCustomer--Views account   balances, and   makes payments   using-->internetBankingSystem
+    internetBankingSystem--Gets accounts   information from,   and makes   payments using-->mainframeBankingSystem
     internetBankingSystem--Sends emails using--> emailSystem
     emailSystem--Sends emails to-->personalBankingCustomer
 
@@ -241,8 +241,8 @@ stateDiagram-v2
 ```mermaid
 graph TD
     subgraph "Customer Service"
-        c2["API\nREST API\nManeja solicitudes de clientes"]
-        c3["Database\nMySQL\nAlmacena información"]
+        c2["API REST API Maneja solicitudes de clientes"]
+        c3["Database MySQL Almacena información"]
     end
-    c2 --> c4["Customer\nCustomer.java\nRepresenta un cliente"]
+    c2 --> c4["Customer Customer.java Representa un cliente"]
 ```
