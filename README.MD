@@ -253,9 +253,47 @@ graph TD
 
 ```mermaid
 flowchart LR
-    id1(Start)-->id2(Stop)
-    id2-->|Posible|id3(Auditoria Final)
-    style id1 fill:#f9f,stroke:#333,stroke-width:4px
-    style id2 fill:#bbf,stroke:#f66,stroke-width:2px,color:#fff,stroke-dasharray: 5 5
-    style id3 fill:blue,stroke:red,stroke-width:2px,color:#fff,stroke-dasharray: 5 5
+    id1(Start)-->id2{Decision Point}
+    id2-->|Positive|id3(Auditoria Final)
+    id2-->|Negative|id4(Detenido)
+    id4-->id5(Final Alternativo)
+    
+    style id1 fill:#72B545,stroke:#72B545,stroke-width:2px,stroke-dasharray: 0 0,rx:10,ry:10
+    style id2 fill:#FE814F,stroke:#FE814F,stroke-width:2px,rx:10,ry:10
+    style id3 fill:#66B2FF,stroke:#F3682D,stroke-width:2px,stroke-dasharray: 5 5,rx:10,ry:10
+    style id4 fill:#76CCD9,stroke:#76CCD9,stroke-width:2px,rx:10,ry:10
+    style id5 fill:#FFC903,stroke:#FFC903,stroke-width:2px,rx:10,ry:10
+```
+
+
+```mermaid
+%% Definición del fondo blanco
+flowchart LR
+    id1(Start)-->id2{Decision Point}
+    id2-->|Positive|id3(Auditoria Final)
+    id2-->|Negative|id4(Detenido)
+    id4-->id5(Final Alternativo)
+
+    %% Estilos de nodos con colores de borde especificados y texto negro
+    style id1 fill:#fff,stroke:#72B545,stroke-width:2px,stroke-dasharray: 0 0,rx:10,ry:10,color:#000
+    style id2 fill:#fff,stroke:#FE814F,stroke-width:2px,rx:10,ry:10,color:#000
+    style id3 fill:#fff,stroke:#66B2FF,stroke-width:2px,stroke-dasharray: 5 5,rx:10,ry:10,color:#000
+    style id4 fill:#fff,stroke:#76CCD9,stroke-width:2px,rx:10,ry:10,color:#000
+    style id5 fill:#fff,stroke:#FFC903,stroke-width:2px,rx:10,ry:10,color:#000
+
+```
+
+```mermaid
+flowchart LR
+    id1(Start)-->id2{Decision Point}
+    id2-->|Positive|id3(Auditoria Final)
+    id2-->|Negative|id4(Detenido)
+    id4-->id5(Final Alternativo)
+
+    %% Estilos de nodos con colores de borde, texto negro y fondo claro
+    style id1 fill:#D4E4D2,stroke:#72B545,stroke-width:2px,stroke-dasharray: 0 0,rx:10,ry:10,color:#000
+    style id2 fill:#FAD2B2,stroke:#FE814F,stroke-width:2px,rx:10,ry:10,color:#000
+    style id3 fill:#D0E1FF,stroke:#66B2FF,stroke-width:2px,stroke-dasharray: 5 5,rx:10,ry:10,color:#000
+    style id4 fill:#E4F1F9,stroke:#76CCD9,stroke-width:2px,rx:10,ry:10,color:#000
+    style id5 fill:#FDF6E4,stroke:#FFC903,stroke-width:2px,rx:10,ry:10,color:#000
 ```
