@@ -1,12 +1,14 @@
-Mermaid es una herramienta poderosa que permite crear una gran variedad de diagramas mediante una sintaxis sencilla en texto. A continuación, se presenta una lista de los tipos de diagramas que se pueden hacer con Mermaid:
+
+
 
 ### 1. **Diagramas de flujo (Flowcharts)**
 - **Dirección de arriba a abajo** (`TB`)
 - **Dirección de izquierda a derecha** (`LR`)
 - **Dirección de derecha a izquierda** (`RL`)
 - **Dirección de abajo hacia arriba** (`BT`)
-```mermaid 
- graph TB
+
+```mermaid
+graph TB
     A[Start] --> B{Decision}
     B -->|Yes| C[Option 1]
     B -->|No| D[Option 2]
@@ -62,7 +64,7 @@ stateDiagram
     Active --> Inactive : Timeout
 ```
 
-### 6. **Diagramas de Tareas o Entidades (Entity Relationship Diagrams - ERD)**
+### 6. **Diagramas de Entidad-Relación (ERD)**
 - Modela las relaciones entre diferentes entidades en un sistema.
 
 ```mermaid
@@ -76,7 +78,7 @@ erDiagram
 ```
 
 ### 7. **Gráficos de Red (Network Diagrams)**
-- Para mostrar redes de nodos interconectados.
+- Muestra redes de nodos interconectados.
 
 ```mermaid
 graph LR
@@ -97,13 +99,7 @@ journey
       Payment: 2: User
 ```
 
-### 9. **Diagramas de Entidad-Relación (Entity Relationship Diagrams)**
-- Describen entidades y sus relaciones en un sistema de bases de datos.
-
-### 10. **Diagramas de Tareas (Task Diagrams)**
-- Muestra tareas y su progreso o estado de completitud.
-
-### 11. **Gráficos de Párrafo (Pie Charts)**
+### 9. **Gráficos de Tarta (Pie Charts)**
 - Representa datos proporcionales en forma de gráfica circular.
 
 ```mermaid
@@ -115,4 +111,100 @@ pie
     "Product D" : 10
 ```
 
-Mermaid es bastante flexible, por lo que admite personalización y expansión de sus diagramas con diferentes estilos, enlaces y más elementos.
+### 10. **Diagramas de Tareas (Task Diagrams)**
+- Representa tareas y su progreso o estado de completitud.
+
+```mermaid
+graph TD
+    Task1 --> Task2
+    Task2 --> Task3
+    Task3 --> TaskComplete[Complete]
+```
+
+### 11. **Diagramas de Colaboración (C4 Diagrams)**
+- Modela componentes, contenedores y relaciones en sistemas distribuidos o microservicios.
+
+```mermaid
+C4Component
+Container_Boundary(c1, "Customer Service") {
+    Component(c2, "API", "REST API")
+    Component(c3, "Database", "MySQL")
+}
+c2 --> c3 : Reads/Writes Data
+```
+
+### 12. **Diagramas de Tubería (Pipeline Diagrams)**
+- Representa el flujo de datos o procesos a través de un pipeline.
+
+```mermaid
+graph LR
+    A[Input] --> B[Process]
+    B --> C[Output]
+```
+
+### 13. **Diagramas de Archivos y Carpetas (Git Graph)**
+- Muestra visualmente la estructura y relaciones de carpetas y archivos, especialmente útil en proyectos Git.
+
+```mermaid
+gitGraph
+    commit id: "Inicio del proyecto"
+    branch develop
+    checkout develop
+    commit id: "Desarrollo inicial"
+    checkout main
+    commit id: "Primera versión"
+    merge develop
+```
+
+### 14. **Diagramas de Comparación (Quadrant Diagrams)**
+- Organiza conceptos o elementos en cuadrantes para comparación según dos criterios.
+
+```mermaid
+graph TD
+    A["Eje X: Eficiencia"] --> B["Alta"]
+    A --> C["Baja"]
+    B --> D["Eje Y: Costo Alto"]
+    B --> E["Eje Y: Costo Bajo"]
+    C --> F["Eje Y: Costo Alto"]
+    C --> G["Eje Y: Costo Bajo"]
+```
+
+### 15. **Diagramas de Control de Flujo (State Diagrams)**
+- Muestra los estados de un sistema o proceso y las transiciones entre esos estados.
+
+```mermaid
+stateDiagram-v2
+    [*] --> Inactivo
+    Inactivo --> Activo : Evento1
+    Activo --> Inactivo : Evento2
+    Activo --> Finalizado : Evento3
+    Finalizado --> [*]
+```
+
+### 16. **Diagramas de Requisitos (Requirement Diagrams)**
+- Representa las relaciones entre requisitos y los elementos que los cumplen.
+
+```mermaid
+requirementDiagram
+    requirement R1 {
+        id: 1
+        text: "El sistema debe permitir a los usuarios autenticarse"
+    }
+    testCase T1 {
+        id: 101
+        description: "Verificar autenticación correcta"
+    }
+    R1 -- T1
+```
+
+### 17. **Diagramas de Arquitectura de Software (C4: Container & Component Diagrams)**
+- Se centra en la arquitectura de un sistema, modelando los componentes y contenedores.
+
+```mermaid
+C4Component
+Container_Boundary(c1, "Customer Service") {
+    Component(c2, "API", "REST API", "Maneja solicitudes de clientes")
+    Component(c3, "Database", "MySQL", "Almacena información")
+}
+c2 --> c3 : Operaciones CRUD
+```
