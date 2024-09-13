@@ -5,13 +5,12 @@ Mermaid es una herramienta poderosa que permite crear una gran variedad de diagr
 - **Dirección de izquierda a derecha** (`LR`)
 - **Dirección de derecha a izquierda** (`RL`)
 - **Dirección de abajo hacia arriba** (`BT`)
-
-:::mermaid
-graph TB
+```mermaid 
+ graph TB
     A[Start] --> B{Decision}
     B -->|Yes| C[Option 1]
     B -->|No| D[Option 2]
-:::
+```
 
 ### 2. **Diagramas de Gantt (Gantt charts)**
 - Representación de cronogramas de proyectos con tiempos, dependencias y tareas.
